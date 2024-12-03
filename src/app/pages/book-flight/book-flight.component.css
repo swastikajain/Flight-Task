@@ -1,0 +1,70 @@
+.flight-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Reduced gap for a tighter layout */
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9; /* Subtle background for the container */
+}
+
+.flight-card {
+  width: 280px; /* Slightly narrower for compact design */
+  border: 1px solid #e0e0e0; /* Softer border */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px; /* More padding for better spacing */
+}
+
+.flight-card:hover {
+  transform: translateY(-8px); /* Slightly more elevation on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.flight-card-header {
+  background-color: #8a4d4d; /* Softer red */
+  color: #ffffff;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold; /* Emphasis on header */
+  font-size: 18px;
+}
+
+.flight-card-body {
+  padding: 15px;
+  color: #333333; /* Darker text for better readability */
+  font-size: 14px; /* Adjusted font size for body */
+  line-height: 1.5;
+}
+
+.flight-card-footer {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.flight-card-footer button {
+  background-color: #6f468f; /* Richer purple for button */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.flight-card-footer button:hover {
+  background-color: #4e9c4e; 
+  transform: scale(1.05); 
+}
+
+@media (max-width: 768px) {
+  .flight-card {
+    width: 90%; 
+  }
+}

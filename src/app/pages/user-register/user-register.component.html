@@ -1,0 +1,52 @@
+<div class="register-container">
+    <form [formGroup]="userFlightForm" (ngSubmit)="onFormSubmit()">
+    
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" type="text" class="form-control" placeholder="Enter your name" formControlName="name" (keyup)="resetMsg()">
+        <span *ngIf="userFlightForm.controls['name'].touched && userFlightForm.controls['name'].invalid"> 
+          <span *ngIf="userFlightForm.controls['name'].errors?.['required']">
+            <small>Name is mandatory</small>
+          </span>
+        </span>
+      </div>
+  
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact</label>
+        <input id="contact" type="text" class="form-control" placeholder="Enter your contact number" formControlName="contact" (keyup)="resetMsg()">
+        <span *ngIf="userFlightForm.controls['contact'].touched && userFlightForm.controls['contact'].invalid"> 
+          <span *ngIf="userFlightForm.controls['contact'].errors?.['required']">
+            <small>Contact is mandatory</small>
+          </span>
+          <span *ngIf="userFlightForm.get('contact')?.hasError('minlength') || userFlightForm.get('contact')?.hasError('maxlength')">
+            <small>Please provide a valid contact number (7 or 10 digits).</small>
+          </span>
+        </span>
+      </div>
+  
+      <div class="mb-3">
+        <label for="date_of_journey" class="form-label">Date of Journey</label>
+        <input id="date_of_journey" type="date" class="form-control" placeholder="Select journey date" formControlName="date_of_journey" (keyup)="resetMsg()">
+        <span *ngIf="userFlightForm.controls['date_of_journey'].touched && userFlightForm.controls['date_of_journey'].invalid"> 
+          <span *ngIf="userFlightForm.controls['date_of_journey'].errors?.['required']">
+            <small>Date of Journey is mandatory</small>
+          </span>
+        </span>
+      </div>
+  
+      <div class="mb-3">
+        <label for="number_of_passengers" class="form-label">Number of Passengers</label>
+        <input id="number_of_passengers" type="number" class="form-control" placeholder="Enter number of passengers" formControlName="number_of_passengers" (keyup)="resetMsg()">
+        <span *ngIf="userFlightForm.controls['number_of_passengers'].touched && userFlightForm.controls['number_of_passengers'].invalid"> 
+          <span *ngIf="userFlightForm.controls['number_of_passengers'].errors?.['required']">
+            <small>Number of passengers is mandatory</small>
+          </span>
+        </span>
+      </div>
+  
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="userFlightForm.invalid">Submit</button>
+    </form>
+  </div>
+  
